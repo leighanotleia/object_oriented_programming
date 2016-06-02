@@ -4,11 +4,15 @@ class Cat
   def initialize( name, preferred_food, meal_time)
     @name = name
     @preferred_food = preferred_food
-    @meal_time = meal_time
+    @meal_time = meal_time.to_i
   end
 
   def eats_at
-    "#{@eats_at} AM"
+    if @meal_time < 13
+      puts "#{meal_time} AM"
+    else
+      puts "#{@meal_time - 12 } PM"
+    end
   end
 
   def meow
