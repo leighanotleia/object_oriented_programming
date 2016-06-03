@@ -66,13 +66,14 @@ end
 
 
 rover1 = Rover.new
-
+rover2 = Rover.new
 
 rover1.plateau_size
 rover1.start_positon
 rover1.moving
 rover1.print_position
-# rover.move
-# rover.print_position
-# rover.turn("L")
-# rover.print_position
+
+rover2.plateau_size
+rover2.start_positon
+rover2.moving
+rover2.print_position
