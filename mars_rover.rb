@@ -33,6 +33,31 @@ class Rover
     end
   end
 
+  def plateau_size
+    puts "What is the size of the plateau?"
+    plateau = gets.chomp.split(" ").map {|x| x.to_i}
+  end
+
+  def start_positon
+    puts "Current position:"
+    positions = gets.chomp.split(" ")
+    @pos_x = positions[0].to_i
+    @pos_y = positions[1].to_i
+    @direction = positions[2]
+  end
+
+  def moving
+    puts "Where to you want to go?"
+    instructions = gets.chomp.split("")
+      instructions.each do |instruction|
+      if instruction == "L" || instruction == "R"
+        turn(instruction)
+      elsif instruction == "M"
+        move
+      end
+    end
+  end
+
   def print_position
     puts "The rover is #{@pos_x}, #{@pos_y}, facing #{@direction}"
   end
@@ -40,18 +65,14 @@ class Rover
 end
 
 
-rover = Rover.new
+rover1 = Rover.new
 
-puts "What is the size of the plateau?"
-rover.plateau = gets.chomp.split(" ").map {|x| x.to_i}
 
-puts "Current position:"
-positions = gets.chomp.split(" ")
-rover.pos_x = positions[0].to_i
-rover.pos_y = positions[1].to_i
-rover.direction = positions[2]
-rover.print_position
-rover.move
-rover.print_position
-rover.turn("L")
-rover.print_position
+rover1.plateau_size
+rover1.start_positon
+rover1.moving
+rover1.print_position
+# rover.move
+# rover.print_position
+# rover.turn("L")
+# rover.print_position
